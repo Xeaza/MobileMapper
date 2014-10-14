@@ -28,6 +28,9 @@
                             <constraint firstItem="ddo-ck-le8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="tKh-Kb-5Nm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="ddo-ck-le8" id="gWF-go-3n9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
