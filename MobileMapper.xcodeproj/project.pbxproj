@@ -416,6 +416,7 @@
 				34F2219F19ED75A60073F65D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34F221A019ED75A60073F65D /* Build configuration list for PBXNativeTarget "MobileMapperTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +425,7 @@
 				34F221A219ED75A60073F65D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

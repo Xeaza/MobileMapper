@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property MKPointAnnotation *mobileMakersAnnotation;
+@property CLLocationManager *locationManager;
 
 @end
 
@@ -22,6 +23,9 @@
 {
     [super viewDidLoad];
 
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager requestAlwaysAuthorization];
+    
     CLLocationCoordinate2D coord;
     coord.latitude = 41.89373984;
     coord.longitude = -87.63532979;
@@ -56,6 +60,11 @@
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
+    if (annotation == mapView.userLocation)
+    {
+        return nil;
+    }
+
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MyPinID"];
     pin.canShowCallout = YES;
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
