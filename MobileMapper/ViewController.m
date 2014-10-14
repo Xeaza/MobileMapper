@@ -31,6 +31,27 @@
     self.mobileMakersAnnotation.title = @"Mobile Makers";
     [self.mapView addAnnotation:self.mobileMakersAnnotation];
 
+    [self addMountRushmorePin];
+}
+
+- (void)addMountRushmorePin
+{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:@"Les diablerets" completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error)
+        {
+            // Handle error
+        }
+        else
+        {
+            for (CLPlacemark *placemark in placemarks)
+            {
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                annotation.coordinate = placemark.location.coordinate;
+                [self.mapView addAnnotation:annotation];
+            }
+        }
+    }];
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
